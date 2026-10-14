@@ -41,9 +41,9 @@ export default function Hero() {
           <img
             src="/heider-avatar.jpg"
             alt="Heider Costa, contador e sócio-fundador da HC Consulting"
-            width="240"
-            height="240"
-            className="size-11 shrink-0 rounded-full object-cover ring-2 ring-white"
+            width="280"
+            height="280"
+            className="size-14 shrink-0 rounded-full object-cover ring-2 ring-white"
           />
           <span className="text-[13px] leading-tight sm:text-sm">
             <span className="block font-bold text-ink">Heider Costa</span>
