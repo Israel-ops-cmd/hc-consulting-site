@@ -34,11 +34,28 @@ export default function Hero() {
         </h1>
 
         <m.p {...fadeUp(0.9)} className="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-ink-soft sm:text-lg">
-          A HC Consulting cuida da contabilidade, do financeiro e da folha de pequenas e médias empresas, com atendimento direto do sócio
-          para você entender seus números e parar de pagar imposto no escuro
+          Contabilidade, financeiro e folha da sua empresa num só lugar, com atendimento direto do sócio e números que você entende
         </m.p>
 
-        <m.div {...fadeUp(1.05)} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <m.div {...fadeUp(1.0)} className="glass mx-auto mt-7 flex w-fit max-w-full items-center gap-3 rounded-full py-1.5 pl-1.5 pr-5 text-left">
+          <img
+            src="/heider-avatar.jpg"
+            alt="Heider Costa, contador e sócio-fundador da HC Consulting"
+            width="240"
+            height="240"
+            className="size-11 shrink-0 rounded-full object-cover ring-2 ring-white"
+          />
+          <span className="text-[13px] leading-tight sm:text-sm">
+            <span className="block font-bold text-ink">Heider Costa</span>
+            <span className="mt-0.5 flex items-center gap-1 text-ink-soft">
+              Contador e sócio-fundador
+              <MapPin className="ml-1 size-3.5 shrink-0 text-brand-teal-deep" aria-hidden="true" />
+              Natal/RN
+            </span>
+          </span>
+        </m.div>
+
+        <m.div {...fadeUp(1.1)} className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <CtaButton className="w-full sm:w-auto" />
           <a
             href="#servicos"
@@ -47,11 +64,6 @@ export default function Hero() {
             Ver o que fazemos
           </a>
         </m.div>
-
-        <m.p {...fadeUp(1.15)} className="mt-5 inline-flex items-center gap-1.5 text-sm text-ink-soft">
-          <MapPin className="size-4 text-brand-teal-deep" aria-hidden="true" />
-          Escritório em Natal/RN · atendimento online em todo o Brasil
-        </m.p>
       </div>
 
       <m.ul {...fadeUp(1.25)} className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3" aria-label="Números da HC Consulting">

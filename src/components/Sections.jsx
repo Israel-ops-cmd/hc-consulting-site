@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ArrowUpRight, Calculator, CalendarCheck, Check, FileSearch, Handshake, MessageCircle, Plus, Quote, ShieldCheck, Users, Wallet } from 'lucide-react'
 import Reveal from './Reveal.jsx'
-import CtaButton from './CtaButton.jsx'
+import LeadForm from './LeadForm.jsx'
 import { differentials, extraServices, faqs, pains, services, steps, testimonials } from '../data/site.js'
 
 const icons = { Calculator, FileSearch, Wallet, Users, Handshake, MessageCircle, CalendarCheck, ShieldCheck }
@@ -292,18 +292,26 @@ export function Faq() {
 export function FinalCta() {
   return (
     <section id="contato" aria-labelledby="contato-title" className="scroll-mt-24 px-4 pb-24 pt-8 sm:px-8 lg:px-16">
-      <Reveal className="brand-gradient relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-6 py-16 text-center text-white sm:px-12 lg:py-24">
+      <Reveal className="brand-gradient relative mx-auto grid max-w-6xl items-center gap-10 overflow-hidden rounded-[2rem] px-5 py-14 text-white sm:px-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:py-20">
         <div aria-hidden="true" className="grain absolute inset-0 opacity-30" />
-        <h2 id="contato-title" className="relative mx-auto max-w-3xl font-heading text-[2rem] font-extrabold leading-[1.12] tracking-[-0.02em] sm:text-5xl">
-          Quanto sua empresa está pagando a mais?
-        </h2>
-        <p className="relative mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-white/90">
-          Conte um pouco do seu negócio no WhatsApp e em 48 horas você recebe o diagnóstico mostrando exatamente onde ajustar
-        </p>
-        <div className="relative mt-9 flex justify-center">
-          <CtaButton variant="light" message="Olá! Vim pelo site da HC Consulting e quero fazer o diagnóstico financeiro da minha empresa.">
-            Quero meu diagnóstico
-          </CtaButton>
+        <div className="relative text-center lg:text-left">
+          <h2 id="contato-title" className="font-heading text-[2rem] font-extrabold leading-[1.12] tracking-[-0.02em] sm:text-5xl">
+            Quanto sua empresa está pagando a mais?
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-white/90 lg:mx-0">
+            Responda três perguntas rápidas e em 48 horas você recebe o diagnóstico mostrando exatamente onde ajustar
+          </p>
+          <ul className="mx-auto mt-6 grid max-w-sm gap-2 text-left text-[15px] text-white/90 lg:mx-0">
+            {['Sem compromisso', 'Conversa direto com o sócio', 'Resposta em até 4 horas úteis'].map((t) => (
+              <li key={t} className="flex items-center gap-2.5">
+                <Check className="size-5 shrink-0 text-white" aria-hidden="true" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="relative">
+          <LeadForm />
         </div>
       </Reveal>
     </section>
