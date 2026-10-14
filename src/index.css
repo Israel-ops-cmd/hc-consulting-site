@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+/* Cores extraídas do logo da HC Consulting (degradê azul → verde) */
+@theme {
+  --color-ink: #0b1726;
+  --color-ink-soft: #3b4a5c;
+  --color-paper: #f7fafc;
+  --color-line: #e3e9f0;
+  --color-brand-blue: #0060b7;
+  --color-brand-blue-deep: #004a8f;
+  --color-brand-teal: #06ca9c;
+  --color-brand-teal-deep: #03785d; /* versão escura do verde para texto (contraste AA) */
+  --color-whatsapp: #25d366;
+
+  --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-2xl: 1.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-body text-ink antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-brand-teal) 30%, transparent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* Liquid glass harmonizado com o azul/verde da marca */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, white 72%, transparent),
+      color-mix(in srgb, white 48%, transparent)
+    );
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid color-mix(in srgb, white 70%, var(--color-brand-blue) 6%);
+    box-shadow:
+      0 1px 0 0 color-mix(in srgb, white 90%, transparent) inset,
+      0 10px 30px -12px color-mix(in srgb, var(--color-brand-blue) 22%, transparent);
+  }
+
+  .glass-dark {
+    background: color-mix(in srgb, var(--color-ink) 72%, transparent);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid color-mix(in srgb, white 12%, transparent);
+  }
+
+  .text-gradient {
+    background: linear-gradient(100deg, var(--color-brand-blue) 10%, var(--color-brand-teal-deep) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .brand-gradient {
+    background: linear-gradient(120deg, var(--color-brand-blue) 0%, #0a7fa8 55%, var(--color-brand-teal-deep) 100%);
+  }
+
+  /* Luzes de fundo estáticas: zero custo de animação */
+  .aurora {
+    background:
+      radial-gradient(40% 35% at 15% 10%, color-mix(in srgb, var(--color-brand-teal) 22%, transparent), transparent 70%),
+      radial-gradient(45% 40% at 90% 15%, color-mix(in srgb, var(--color-brand-blue) 18%, transparent), transparent 70%),
+      radial-gradient(50% 40% at 50% 100%, color-mix(in srgb, var(--color-brand-teal) 10%, transparent), transparent 70%);
+  }
+
+  .grain {
+    background-image: radial-gradient(color-mix(in srgb, var(--color-ink) 9%, transparent) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(70% 60% at 50% 30%, black, transparent);
+  }
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
